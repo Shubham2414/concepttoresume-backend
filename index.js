@@ -10,7 +10,18 @@ const app = express();
 app.set("trust proxy", 1);
 app.use(express.json());
 const cors = require("cors");
-app.use(cors()); // TEMP: Open CORS for debugging
+app.use(
+    cors({
+        origin: [
+            "http://localhost:3000",
+            "https://concepttoresume.in",
+            "https://www.concepttoresume.in",
+            "https://concepttoresume-frontend.vercel.app",
+        ],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 app.use(passport.initialize());
 
 connectDB();
