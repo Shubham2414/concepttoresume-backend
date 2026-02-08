@@ -7,8 +7,11 @@ const authRoutes = require("./routes/auth");
 const resumeRoutes = require("./routes/resume");
 
 const app = express();
+const app = express();
 app.set("trust proxy", 1);
 app.use(express.json());
+const cors = require("cors");
+app.use(cors()); // TEMP: Open CORS for debugging
 app.use(passport.initialize());
 
 connectDB();
