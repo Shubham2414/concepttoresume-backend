@@ -76,8 +76,9 @@ router.get(
             { expiresIn: "1h" }
         );
 
-        // TEMP: return token as JSON
-        res.json({ token });
+        // Redirect to frontend with token
+        // TODO: Make this URL configurable via env vars for production
+        res.redirect(`http://localhost:3000/auth/callback?token=${token}`);
     }
 );
 
