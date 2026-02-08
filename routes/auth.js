@@ -78,7 +78,8 @@ router.get(
 
         // Redirect to frontend with token
         // TODO: Make this URL configurable via env vars for production
-        res.redirect(`http://localhost:3000/auth/callback?token=${token}`);
+        // const frontendURL = "http://localhost:3000/login/success"; // User instruction
+        res.redirect(`http://localhost:3000/login/success?token=${token}`);
     }
 );
 
