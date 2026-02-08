@@ -7,7 +7,6 @@ const authRoutes = require("./routes/auth");
 const resumeRoutes = require("./routes/resume");
 
 const app = express();
-const app = express();
 app.set("trust proxy", 1);
 app.use(express.json());
 const cors = require("cors");
